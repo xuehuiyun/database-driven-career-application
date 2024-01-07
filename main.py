@@ -1,10 +1,9 @@
-print("hello world")
-# Python program to check if the input number is odd or even.
-# A number is even if division by 2 gives a remainder of 0.
-# If the remainder is 1, it is an odd number.
+from flask import Flask
+app = Flask(__name__)
+@app.route("/")
+def hello_world():
+    return "Hello World123!"
 
-num = int(input("Enter a number: "))
-if (num % 2) == 0:
-   print("{0} is Even".format(num))
-else:
-   print("{0} is Odd".format(num))
+print(__name__)
+if __name__ == "__main__":
+    app.run(host='0.0.0.0', debug=True)
