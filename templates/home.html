@@ -32,15 +32,31 @@
       .footer_button{
         margin-bottom:1rem;
       }
+      .content__image{
+        height: 400px;
+        width: 100%;
+        object-fit: cover;
+        object-position: center;
+      }
     </style>
   </head>
   <body>
+    {%include 'nav.html' %}
     <div class="container">
     <h1 class="text-center mt-2 mb-4">Find Jobs</h1>
-    <img class="img-fluid" src="https://ebf89ab4-ebc5-44db-9c58-5051f7a5c35d-00-1590oxjor64s8.picard.replit.dev/static/header.jpg" alt="header_image" >
+    <img class="img-fluid" src="/static/header.jpg" alt="header_image" >
     <h2 class="text-center mt-2 mb-4">About Us</h2>
+      <div class="row">
+      <div class="col-6">       
     <p class="lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        </div>
+      <div class="col-6">
+        <img class="content__image" src="/static/content.jpg" alt="working_together">
+      </div>
+        </div>
+      
     <h2 class="text-center mt-2 mb-4">Open Positions</h2>
+        
     <p>
       {% for job in jobs %}
       {% include 'jobitem.html' %}
@@ -51,5 +67,6 @@
     <button class="btn btn-primary btn-lg footer_button">Contact Us</button>
         </div>
       </div>
+    {% include 'footer.html' %}
   </body>
 </html>
