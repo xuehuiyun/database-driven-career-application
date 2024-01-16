@@ -37,6 +37,9 @@ def hello_world():
 @app.route('/api/jobs')
 def list_jobs():
   return jsonify(JOBS)
+@app.route('/event.html')
+def event():
+    return render_template('event.html')
   
 if __name__ == "__main__":
     app.run(host='0.0.0.0', debug=True)

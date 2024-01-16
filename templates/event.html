@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Home</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <style>
+      h1{
+        font-size: 80px;
+        font-family: "Comic Sans MS", cursive, sans-serif;
+        
+      }
+      .container{
+        max-width: 960px;
+        margin: 0 auto;
+      }
+      h2{
+        font-family: "Comic Sans MS", cursive, sans-serif;
+        font-size: 32px;
+        color:rgb(56, 52, 41);
+      }
+      h4{
+        color:rgb(120,120,120);
+        margin-bottom:4px;
+        
+      }
+      .text__subcontent{
+        margin-bottom:16px;
+        padding-bottom:4px;
+      }
+      .footer_button{
+        margin-bottom:1rem;
+      }
+      .content__image{
+        height: 400px;
+        width: 100%;
+        object-fit: cover;
+        object-position: center;
+      }
+      .main_content {
+          display: grid;
+          grid-template-columns: repeat(12, 1fr);
+        .card_title {
+            margin-top: 1rem;
+            margin-bottom: 1rem;
+            justify-content: center;
+            display: flex;
+        }
+        .card{
+            background-color: rgb(250, 244, 227);
+            display: flex;
+            grid-column: span 4;
+            border: 2px solid blue;
+            flex-direction: column;
+            margin-right: 1rem;
+            margin-bottom: 1rem;
+            padding-top: 1rem;
+            padding-bottom: 1rem;
+            gap: 1rem;
+        }
+        .card_text{
+          padding-left:1rem;
+          display:flex;
+        }
+        .main__button {
+            background-color: rgb(82, 82, 238);
+            justify-content: center;
+            display: flex;
+            color: white;
+            height: 2rem;
+            /* the links should appear in the same line  */
+            margin-top: auto;
+            text-decoration: none;
+            padding-top: 0.5rem;
+            border-radius: 5rem;
+            margin-left: 5rem;
+            margin-right: 5rem;
+        }
+        .main__button:hover {
+            color: blue;
+            background-color: rgb(145, 93, 145);
+        }
+      }
+    </style>
+  </head>
+  <body>
+     {%include 'nav.html' %}
+    <div class="container">
+    <h1 class="text-center mt-2 mb-4">Events</h1>
+      <div class="main_content">
+      <div class="card">
+          <h3 class="card_title">Interview coaching</h3>
+          <img src="/static/event1.jpg" class="content__image"
+              alt="Interview_coaching_image">
+          <p class="card_text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+        <button type="button" class="btn btn-primary main__button" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+          Read More
+        </button>
+      </div>
+      <div class="card">
+          <h3 class="card_title">Coffee Chat</h3>
+        <img src="/static/event2.jpg" class="content__image"
+            alt="Coffee_chat_image">
+        <p class="card_text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+        <button type="button" class="btn btn-primary main__button" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+          Read More
+        </button>
+      </div>
+      <div class="card">
+          <h3 class="card_title">Resume Writing</h3>
+        <img src="/static/event3.jpg" class="content__image"
+            alt="Resume_writing_image">
+        <p class="card_text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.</p>
+        <button type="button" class="btn btn-primary main__button" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+          Read More
+        </button>
+      </div>
+    
+      </div>
+    {% include 'footer.html' %}
+      <!-- Modal -->
+      <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="staticBackdropLabel">If you want to join:</h1>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <form>
+                  <div class="mb-3">
+                      <label for="userEmail" class="form-label">Email address:</label>
+                      <input type="email" class="form-control" id="userEmail" placeholder="name@example.com">
+                  </div>
+              </form>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-primary">Understood</button>
+            </div>
+          </div>
+        </div>
+      </div>
+  </body>
+</html>
