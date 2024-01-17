@@ -3,7 +3,4 @@ gunicorn
 sqlalchemy
 pymysql
 
-database: jobwebsite
-username: 9zvsemrwcd91sydizgiv
-host: aws.connect.psdb.cloud
-password: pscale_pw_Hy8FnWjmYGdgjsaExyXZVNU7XVU0cVmvfIg7VWptgm2
+
