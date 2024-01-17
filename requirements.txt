@@ -1,5 +1,7 @@
 Flask
 gunicorn
+sqlalchemy
+pymysql
 
 database: jobwebsite
 username: 9zvsemrwcd91sydizgiv
