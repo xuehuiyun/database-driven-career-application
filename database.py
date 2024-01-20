@@ -29,6 +29,7 @@ def load_job_from_db(id):
        return None
      else:
        return dict(rows[0]._asdict())
+
     # print("type(result):", type(result))
     # result_all = result.all()
     # print("type(result.all()):", type(result_all))
@@ -37,5 +38,23 @@ def load_job_from_db(id):
     # first_result_dict = first_result._asdict()
     # print("type(first_result_dict):", type(first_result_dict))
     # print(first_result_dict)
-      
-    
+def add_information_to_db(data):
+  with engine.connect() as conn:
+      query = text("""
+      INSERT INTO register(full_name, user_name, password, email, education, work_experience, resume_url) 
+      VALUES (:full_name, :user_name, :password, :email, :education, :work_experience, :resume_url)
+      """)
+      params = {
+      'full_name': data['full_name'],
+      'user_name': data['user_name'],
+      'password': data['password'],
+      'email': data['email'],
+      'education': data['education'],
+      'work_experience': data['work_experience'],
+      'resume_url': data['URL']
+      }
+    # Execute the query with the parameters
+      conn.execute(query, params)
+
+  
+

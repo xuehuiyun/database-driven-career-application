@@ -25,6 +25,11 @@
         margin-bottom:4px;
 
       }
+      .apply_link{
+        display:flex;
+        justify-content:center;
+        
+      }
     </style>
   </head>
   <body>
@@ -53,6 +58,8 @@
      <li>{{line}}</li>
      {% endfor %}
    </ol>
+      <div class = "apply_link">
+       <a href="mailto:someone@gmail.com?subject=Appliction for {{job['title']}}" type="button" class="btn btn-outline-primary ">Quick Apply</a>
       </div>
     {% include 'footer.html' %}
   </body>

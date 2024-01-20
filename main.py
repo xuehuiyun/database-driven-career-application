@@ -1,40 +1,7 @@
-from flask import Flask, render_template,jsonify
-from database import load_jobs_from_db, load_job_from_db
+from flask import Flask, render_template,jsonify,request
+from database import load_jobs_from_db, load_job_from_db, add_information_to_db
 app = Flask(__name__)
-# JOBS = [
-#   {
-#     'id': 1,
-#     'title': 'Frontend Engineer',
-#     'location': ' Seattle',
-#     'salary':'$100,000'
-#   },
-#   {
-#     'id': 2,
-#     'title': 'Backend Engineer',
-#     'location': ' Los Angeles',
-#     'salary':'$100,000'
-#   },
-#   {
-#     'id': 3,
-#     'title': 'Fullstack Engineer',
-#     'location': ' San Jose',
-#     'salary':'$120,000'
-#   },
-#   {
-#     'id': 4,
-#     'title': 'Frontend Engineer Intern',
-#     'location': ' Remote'
-#   },
-#   {
-#     'id': 5,
-#     'title': 'Data Analyst',
-#     'location': ' New York',
-#     'salary':'$80,000'
-#   },
-# ]
 
-
-  
 @app.route('/')
 def hello_world():
     jobs = load_jobs_from_db()
@@ -49,11 +16,26 @@ def show_job(id):
   if not job:
     return "Not Found",404
   return render_template('jobpage.html',job=job)
+@app.route("/job/<id>/apply")
+def apply_to_job(id):
+  data = request.args
+  #store the data in the database
+  #display an ackonelwdgement
+  #send an email
+  return render_template('application_submitted.html',
+                         application=data) 
 @app.route('/event.html')
 def event():
     return render_template('event.html')
 @app.route('/register.html')
 def register():
-    return render_template('register.html')  
+  return render_template('register.html')
+@app.route("/register",methods=['post'])
+def apply_user_register():
+  data = request.form
+  add_information_to_db(data)
+  return render_template('register_form.html',
+                        register=data)
+
 if __name__ == "__main__":
     app.run(host='0.0.0.0', debug=True)

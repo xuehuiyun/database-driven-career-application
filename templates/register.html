@@ -90,7 +90,38 @@
     <div class="container">
     <h1 class="text-center mt-2 mb-4">register</h1>
       <div class="main_content">
-        
+        <form action="/register" method='post'>
+          <div>
+          <label for="full_name">Full Name</label> <br>
+          <input type="text" name="full_name" id="full_name" placeholder="eva xue" >
+            </div>
+          <div>
+            <label for="user_name">User Name</label> <br>
+            <input type="text" name="user_name" id="user_name" placeholder="eva xue" >
+              </div>
+          <div>
+            <label for="password">Password</label> <br>
+            <input type="text" name="password" id="password" >
+              </div>
+          <div>
+          <label for="email">Email</label> <br>
+          <input type="text" name="email" id="email" placeholder="abc@gmail.com">
+            </div>
+
+          <div>
+            <label for="education">Education</label><br>
+            <textarea name="education" id="education" cols="30" rows="3"></textarea>
+          </div>
+          <div>
+            <label for="work_experience">Work Experience</label> <br>
+            <textarea name="work_experience" id="work_experience" cols="30" rows="3"></textarea>
+          </div>
+          <div>
+            <label for="URL">Resume URL</label> <br>
+            <input type="text" id="URL" name="URL">
+          </div>
+          <input type="submit">
+        </form>
       </div>
     </div>
     {% include 'footer.html' %}
