@@ -19,20 +19,24 @@ def show_job(id):
 @app.route("/job/<id>/apply")
 def apply_to_job(id):
   data = request.args
-  #store the data in the database
-  #display an ackonelwdgement
-  #send an email
+  
   return render_template('application_submitted.html',
                          application=data) 
 @app.route('/event.html')
 def event():
     return render_template('event.html')
+@app.route('/about.html')
+def about():
+    return render_template('about.html')
 @app.route('/register.html')
 def register():
   return render_template('register.html')
 @app.route("/register",methods=['post'])
 def apply_user_register():
   data = request.form
+  #store the data in the database
+  #display an ackonelwdgement
+  #send an email
   add_information_to_db(data)
   return render_template('register_form.html',
                         register=data)

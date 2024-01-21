@@ -82,6 +82,7 @@
             color: blue;
             background-color: rgb(145, 93, 145);
         }
+      
       }
     </style>
   </head>
@@ -93,19 +94,19 @@
         <form action="/register" method='post'>
           <div>
           <label for="full_name">Full Name</label> <br>
-          <input type="text" name="full_name" id="full_name" placeholder="eva xue" >
+          <input type="text" name="full_name" id="full_name" placeholder="eva xue" required >
             </div>
           <div>
             <label for="user_name">User Name</label> <br>
-            <input type="text" name="user_name" id="user_name" placeholder="eva xue" >
+            <input type="text" name="user_name" id="user_name" placeholder="eva xue" required>
               </div>
           <div>
             <label for="password">Password</label> <br>
-            <input type="text" name="password" id="password" >
+            <input type="text" name="password" id="password" placeholder="12345678" required>
               </div>
           <div>
           <label for="email">Email</label> <br>
-          <input type="text" name="email" id="email" placeholder="abc@gmail.com">
+          <input type="text" name="email" id="email" placeholder="abc@gmail.com" required>
             </div>
 
           <div>

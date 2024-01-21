@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Home</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <style>
+      h1{
+        font-size: 80px;
+        font-family: "Comic Sans MS", cursive, sans-serif;
+
+      }
+      .container{
+        max-width: 720px;
+        margin: 0 auto;
+      }
+      h2{
+        font-family: "Comic Sans MS", cursive, sans-serif;
+        font-size: 32px;
+        color:rgb(56, 52, 41);
+      }
+      h4{
+        color:rgb(120,120,120);
+        margin-bottom:4px;
+
+      }
+      .text__subcontent{
+        margin-bottom:16px;
+        padding-bottom:4px;
+      }
+      .footer_button{
+        margin-bottom:1rem;
+      }
+      .content__image{
+        height: 400px;
+        width: 100%;
+        object-fit: cover;
+        object-position: center;
+      }
+      .body-home__content-image {
+          height: 200px;
+          width: 200px;
+      }
+
+      .body-home__content {
+          border: 1px solid black;
+          margin: 0.5rem;
+          border-radius: 0.2rem;
+          grid-template-columns: 3fr 1fr;
+          grid-template-rows: 1fr;
+          display: grid;
+          margin-top: 1rem;
+          background-color: #eee;
+      }
+
+      .body-home__sub-content {
+          grid-column: 1;
+          grid-row: 1;
+      }
+
+      .body-home__content-image {
+          grid-column: 2;
+          margin-left: auto;
+          margin-right: auto;
+          grid-row: 1;
+      }
+
+      .body-home__content-title {
+          padding-top: 1.5rem;
+          padding-bottom: 1.5rem;
+          justify-content: center;
+          display: flex;
+      }
+
+      .body-home__content-paragraph {
+          line-height: 1.6rem;
+
+      }
+
+      .body-home__content2 {
+          border: 1px solid black;
+          margin: 0.5rem;
+          border-radius: 0.2rem;
+          grid-template-columns: repeat(4, 1fr);
+          display: grid;
+          margin-bottom: 5rem;
+          background-color: #eee;
+      }
+
+      .body-home__content-image2 {
+          grid-column: span 1;
+          height: 200px;
+          width: 200px;
+          margin-left: auto;
+          margin-right: auto;
+      }
+
+      .body-home__sub-content2 {
+          grid-column: span 3;
+
+      }
+
+      .body-home__content-paragraph2 {
+          line-height: 1.2rem;
+          margin-bottom: 1.5rem;
+      }
+
+      .body-home__content-title2 {
+          padding-top: 1.5rem;
+          padding-bottom: 1.5rem;
+          justify-content: center;
+          display: flex;
+      }
+    </style>
+  </head>
+  <body>
+     {%include 'nav.html' %}
+    <div class="container">
+    <h1 class="text-center mt-2 mb-4">About us</h1>
+      <div class="body-home__content">
+        <img class="body-home__content-image"
+            src="/static/about1.jpg""
+            alt="grey_brown_tabby_cat">
+        <div class="body-home__sub-content">
+            <h3 class="body-home__content-title">Join Us</h3>
+            <p class="body-home__content-paragraph">Lorem ipsum dolor sit amet consectetur adipiscing elit massa
+                quam,
+                faucibus taciti inceptos est morbi gravida dictum. Libero condimentum nibh non cum fames duis
+                tortor,
+                leo consequat imperdiet penatibus nulla aliquam lacinia bibendum, enim viverra litora facilisis sem
+                ullamcorper. Nisl penatibus habitant curae euismod vitae enim pulvinar, netus eget ornare parturient
+                hendrerit proin natoque, consequat tellus libero lobortis turpis dictumst.
+            </p>
+        </div>
+
+      </div>
+
+      <div class="body-home__content2">
+        <img class="body-home__content-image2"
+            src="/static/about2.jpg"
+            alt="grey_cat_on_the _table">
+        <div class="body-home__sub-content2">
+            <h3 class="body-home__content-title2">Online Course</h3>
+            <p class="body-home__content-paragraph2">Lorem ipsum dolor sit amet consectetur adipiscing elit massa
+                quam.</p>
+            <p class="body-home__content-paragraph2">
+                faucibus taciti inceptos est morbi gravida dictum. Libero condimentum nibh non cum fames duis
+                tortor.</p>
+            <p class="body-home__content-paragraph2">
+                leo consequat imperdiet penatibus nulla aliquam lacinia bibendum, enim viverra litora facilisis sem
+                ullamcorper. Nisl penatibus habitant curae euismod vitae enim pulvinar, netus eget ornare parturient
+                hendrerit proin natoque, consequat tellus libero lobortis turpis dictumst.
+            </p>
+        </div>
+      </div>
+    {% include 'footer.html' %}
+  </body>
+</html>
