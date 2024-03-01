@@ -1,0 +1,20 @@
+<div class="border-bottom text__subcontent row">
+  <div class="col-6">
+    <h4>{{ dog.name }}</h4>
+    <div>
+      <b>Location:</b> {{ dog.location }}
+    </div>
+    <div>
+      {% if dog.age %}
+        <b>Age:</b> {{ dog.age }} {{ dog.unit }}
+      {% endif %}
+    </div>
+</div>
+  <div class="col-4">
+      <p> <img class="dogitem_image" src="{{dog.image_url}}"></p>
+  </div>
+
+   <div class="col-2">
+    <a href="/dog/{{dog['id']}}" type="button" class="btn btn-outline-primary">Apply</a>
+      </div>
+  </div>

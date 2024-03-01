@@ -1,21 +1,24 @@
 from flask import Flask, render_template,jsonify,request
-from database import load_jobs_from_db, load_job_from_db, add_information_to_db
+from database import load_dogs_from_db, add_information_to_db, load_dog_from_db
 app = Flask(__name__)
 
 @app.route('/')
 def hello_world():
-    jobs = load_jobs_from_db()
-    return render_template('home.html',jobs=jobs)
-@app.route('/api/jobs')
-def list_jobs():
-  return jsonify(jobs)
-  
-@app.route("/job/<id>")
-def show_job(id):
-  job = load_job_from_db(id)
-  if not job:
+    dogs = load_dogs_from_db()
+    return render_template('home.html', dogs=dogs)
+@app.route('/api/dogs')
+def list_dogs():
+    dogs = load_dogs_from_db()
+    return jsonify(dogs)
+
+
+@app.route("/dog/<id>")
+def show_dog(id):
+  dog = load_dog_from_db(id)
+  if not dog:
     return "Not Found",404
-  return render_template('jobpage.html',job=job)
+  return render_template('dogpage.html',dog=dog)
+  
 @app.route("/job/<id>/apply")
 def apply_to_job(id):
   data = request.args

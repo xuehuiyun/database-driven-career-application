@@ -38,28 +38,34 @@
         object-fit: cover;
         object-position: center;
       }
+      .dogitem_image{
+        height: 100px;
+        width: 80px;
+        object-fit: cover;
+        object-position: center;
+      }
     </style>
   </head>
   <body>
      {%include 'nav.html' %}
     <div class="container">
-    <h1 class="text-center mt-2 mb-4">Find Jobs</h1>
+    <h1 class="text-center mt-2 mb-4">Dog Adoption</h1>
     <img class="img-fluid" src="/static/header.jpg" alt="header_image" >
     <h2 class="text-center mt-2 mb-4">About Us</h2>
       <div class="row">
       <div class="col-6">       
-    <p class="lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    <p class="lead">Our group saves dogs from shelters in the Seattle area where they are at risk of being put down. We focus on big dogs and dogs of mixed breeds. We usually rescue them just before they are scheduled to be put down. After we rescue them, we make sure they are healthy and we check how they behave. Then, we find them new homes in Washington or the Pacific Northwest. We carefully check anyone who wants to adopt a dog. We only give dogs to families to be their pets. If you're looking to add a dog to your family, you might find the perfect one with us!</p>
         </div>
       <div class="col-6">
         <img class="content__image" src="/static/content.jpg" alt="working_together">
       </div>
         </div>
       
-    <h2 class="text-center mt-2 mb-4">Open Positions</h2>
+    <h2 class="text-center mt-2 mb-4">Avalible Dogs</h2>
         
     <p>
-      {% for job in jobs %}
-      {% include 'jobitem.html' %}
+      {% for dog in dogs %}
+      {% include 'dogitem.html' %}
       {% endfor %}
     </p>
     </p>

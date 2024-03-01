@@ -9,26 +9,27 @@ engine = create_engine(
       }
   }
 )
-def load_jobs_from_db():
+def load_dogs_from_db():
   with engine.connect() as conn:
-    result = conn.execute(text("select * from jobs"))
-    jobs = []
+    result = conn.execute(text("select * from dogs"))
+    dogs = []
     for row in result.all():
       row_dict = row._asdict()
-      jobs.append(row_dict)
-    return jobs
+      dogs.append(row_dict)
+    return dogs
 
-def load_job_from_db(id):
-   with engine.connect() as conn:
-     result = conn.execute(
-      text("SELECT * FROM jobs WHERE id = :job_id"),
-      {"job_id": id}
-     )
-     rows = result.all()
-     if len(rows) == 0:
-       return None
-     else:
-       return dict(rows[0]._asdict())
+def load_dog_from_db(id):
+  with engine.connect() as conn:
+      result = conn.execute(
+          text("SELECT * FROM dogs WHERE id = :dog_id"),
+          {"dog_id": id}
+      )
+      rows = result.all()
+      if len(rows) == 0:
+          return None
+      else:
+          return dict(rows[0]._asdict())
+
 
     # print("type(result):", type(result))
     # result_all = result.all()
